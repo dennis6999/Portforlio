@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* General Reset */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Full-Height Sections */
+section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c); /* Uniform gradient background */
+    color: #fff;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px; /* Narrow the padding */
+    background: #000; /* Solid black background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: rgb(226, 125, 43); /* Accent color */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 0.6));
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .highlight {
+    color: rgb(226, 125, 43);
+    font-weight: 600;
+}
+
+.hero .btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgb(226, 125, 43);
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: #fff;
+    color: rgb(226, 125, 43);
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8), rgba(0, 0, 0, 0.6));
+    color: #fff;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+}
+
+.about-content {
+    flex: 1;
+    text-align: left;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: rgb(226, 125, 43); /* Accent color */
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-content .highlight {
+    color: rgb(226, 125, 43); /* Accent color */
+    font-weight: 600;
+}
+
+.about-content .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgb(226, 125, 43);
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.about-content .btn:hover {
+    background: #fff;
+    color: rgb(226, 125, 43);
+    transform: scale(1.05); /* Subtle hover effect */
+    cursor: pointer;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds a shadow for depth */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.1); /* Subtle zoom effect on hover */
+}
+
+/* Projects Section */
+.projects {
+    height: 200vh; /* Makes the section take up 2 viewport heights */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0; /* Remove padding to align content properly */
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c); /* Uniform gradient background */
+    color: #fff;
+    text-align: center;
+}
+
+/* Projects Intro Section */
+.projects-intro {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px; /* Add horizontal padding */
+    background: url('intro-background.jpg') center/cover no-repeat; /* Optional background image */
+    color: #fff;
+    text-align: left;
+}
+
+.projects-intro-text {
+    flex: 1; /* Take up equal space */
+    padding-right: 20px; /* Add spacing between text and image */
+}
+
+.projects-intro-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: rgb(226, 125, 43); /* Accent color */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.projects-intro-text p {
+    font-size: 1.2rem;
+    color: #bbb; /* Subtle text color */
+}
+
+.projects-intro-image-container {
+    flex: 1; /* Take up equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-intro-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Makes the image circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds depth */
+    object-fit: cover; /* Ensures the image fits nicely */
+}
+
+/* Explore Projects Button */
+.projects-intro .btn {
+    display: inline-block;
+    margin-top: 20px; /* Adds margin between the text and the button */
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgb(226, 125, 43); /* Accent color */
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.projects-intro .btn:hover {
+    background: #fff;
+    color: rgb(226, 125, 43); /* Inverted hover effect */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.projects-container {
+    height: 100vh; /* Bottom viewport for the project cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 30px; /* Add spacing between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Project Card */
+.project-card {
+    background: #2c2c2c;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures the image fits within the card */
+    border-bottom: 3px solid rgb(226, 125, 43); /* Accent border */
+}
+
+.project-info {
+    padding: 20px;
+    text-align: left; /* Align text to the left */
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.project-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #ccc; /* Subtle text color */
+}
+
+.project-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgb(226, 125, 43); /* Accent color */
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background: #fff;
+    color: rgb(226, 125, 43); /* Inverted hover effect */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Skills Section */
+.skills {
+    height: 100vh; /* Full viewport height */
+    padding: 80px 20px 20px; /* Add padding at the top to account for the navbar */
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c); /* Matches the dark theme */
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures even spacing between title and content */
+}
+
+.skills-header {
+    margin-bottom: 15px; /* Reduces spacing below the header */
+}
+
+.skills-header h2 {
+    font-size: 2rem; /* Smaller font size for the title */
+    color: #f9a825;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    justify-content: space-between; /* Ensures progress bars and skill cards are side by side */
+    align-items: center; /* Vertically centers the content */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 30px; /* Reduces spacing between the two sections */
+    flex: 1; /* Ensures the container takes up remaining space */
+}
+
+/* Left Section: Progress Bars */
+.skills-progress {
+    flex: 1; /* Allows it to take up equal space */
+    max-width: 40%; /* Reduces the width */
+}
+
+.skill {
+    margin-bottom: 15px; /* Reduces spacing between skills */
+    text-align: left;
+}
+
+.skill p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem; /* Smaller font size for skill labels */
+    color: #fff;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px; /* Reduces the height of the progress bar */
+    background: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #f9a825;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Right Section: Icon-Based Skill Cards */
+.skills-cards {
+    flex: 1; /* Allows it to take up equal space */
+    max-width: 40%; /* Reduces the width */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ensures 2 by 2 grid layout */
+    gap: 15px; /* Reduces spacing between cards */
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.1); /* Subtle glassmorphism effect */
+    border-radius: 10px; /* Slightly smaller border radius */
+    padding: 15px; /* Reduces padding */
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); /* Slightly smaller shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Slightly smaller lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Slightly smaller shadow on hover */
+}
+
+.skill-card i {
+    font-size: 2.5rem; /* Smaller icon size */
+    color: #f9a825; /* Accent color for icons */
+    margin-bottom: 8px; /* Reduces spacing below the icon */
+}
+
+.skill-card h3 {
+    font-size: 1rem; /* Smaller font size for card titles */
+    color: #fff;
+    margin-bottom: 8px; /* Reduces spacing below the title */
+}
+
+.skill-card p {
+    font-size: 0.9rem; /* Smaller font size for card descriptions */
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column; /* Stacks the sections vertically on smaller screens */
+        align-items: center;
+    }
+
+    .skills-progress,
+    .skills-cards {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .skills-cards {
+        grid-template-columns: repeat(1, 1fr); /* Single column on smaller screens */
+    }
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c); /* Matches the dark theme */
+    color: white;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex; /* Use flexbox for side-by-side layout */
+    flex-direction: row; /* Align items horizontally */
+    justify-content: space-between; /* Add space between the text and form */
+    align-items: center; /* Vertically align items */
+    gap: 30px; /* Add spacing between the two sections */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    flex: 1; /* Allow the text to take up equal space */
+    text-align: left; /* Align text to the left */
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: rgb(226, 125, 43); /* Accent color */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #bbb; /* Subtle text color */
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1; /* Allow the form to take up equal space */
+    background: rgba(255, 255, 255, 0.1); /* Subtle glassmorphism effect */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: rgb(226, 125, 43); /* Accent color */
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form .btn {
+    display: inline-block;
+    background-color: rgb(226, 125, 43); /* Accent color */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: #fff;
+    color: rgb(226, 125, 43); /* Inverted hover effect */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        gap: 20px;
+    }
+
+    .contact-info {
+        text-align: center; /* Center text on smaller screens */
+    }
+}
+
+/* Footer */
+.footer {
+    background: #1e1e1e; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Spacing between sections */
+}
+
+.social-links {
+    display: flex;
+    gap: 15px; /* Spacing between icons */
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: rgb(226, 125, 43); /* Accent color on hover */
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px; /* Spacing between links */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: rgb(226, 125, 43); /* Accent color on hover */
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #bbb; /* Subtle text color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        gap: 10px; /* Reduce spacing on smaller screens */
+    }
+
+    .footer-links {
+        justify-content: center;
+        gap: 10px; /* Reduce spacing between links */
+    }
+}

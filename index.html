@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+    <title>My Portfolio</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#home" class="logo">My Portfolio</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a passionate <span class="highlight">Web Developer</span> dedicated to creating stunning and functional websites.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    Hi, I'm <span class="highlight">Dennis Wangari</span>, a passionate <span class="highlight">Web Developer</span> and <span class="highlight">Designer</span>. 
+                    I specialize in creating visually stunning and highly functional websites that deliver exceptional user experiences.
+                </p>
+                <p>
+                    With expertise in <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, <span class="highlight">JavaScript</span>, and frameworks like <span class="highlight">React</span>, 
+                    I bring ideas to life through clean and efficient code. I also have a keen eye for design, ensuring every project is both beautiful and user-friendly.
+                </p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+            <div class="about-image">
+                <img src="pfp.jpg" alt="Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="projects-intro">
+            <div class="projects-intro-text">
+                <h2>Projects</h2>
+                <p>Here are some of my recent works. Click on a project to learn more!</p>
+                <a href="#projects-container" class="btn">Explore Projects</a>
+            </div>
+            <div class="projects-intro-image-container">
+                <img src="Illustration.jpg" alt="Projects Illustration" class="projects-intro-image">
+            </div>
+        </div>
+        <div class="projects-container" id="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1 Thumbnail">
+                <div class="project-info">
+                    <h3>Project One</h3>
+                    <p>A brief description of Project One.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2 Thumbnail">
+                <div class="project-info">
+                    <h3>Project Two</h3>
+                    <p>An e-commerce platform developed using React and Node.js.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="project3.jpg" alt="Project 3 Thumbnail">
+                <div class="project-info">
+                    <h3>Project Three</h3>
+                    <p>A sleek UI/UX design for a mobile application.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="skills-header">
+            <h2>My Skills</h2>
+        </div>
+
+        <div class="skills-container">
+            <!-- Left Section: Progress Bars -->
+            <div class="skills-progress">
+                <div class="skill">
+                    <p>HTML <span>95%</span></p>
+                    <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill">
+                    <p>CSS <span>90%</span></p>
+                    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill">
+                    <p>JavaScript <span>85%</span></p>
+                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill">
+                    <p>React.js <span>80%</span></p>
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                </div>
+            </div>
+
+            <!-- Right Section: Icon-Based Skill Cards -->
+            <div class="skills-cards">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Building responsive and interactive user interfaces.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating visually appealing and user-friendly designs.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Backend Development</h3>
+                    <p>Developing robust server-side applications.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Debugging</h3>
+                    <p>Identifying and fixing issues efficiently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Get in <span>Touch</span></h2>
+                <p>Feel free to reach out for collaborations, questions, or just to say hi!</p>
+            </div>
+            <!-- Contact Form -->
+            <form action="submit_form.php" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100073536100890" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/_therealdennis" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/the.real.dennis_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/dennis-ndirangu-069169294/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="copyright">
+                &copy; 2025. Dennis Wangari. My Portfolio. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
