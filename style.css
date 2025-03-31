@@ -446,7 +446,7 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     .skills-container {
-        flex-direction: column; /* Stacks the sections vertically on smaller screens */
+        flex-direction: column; /* Stack sections vertically */
         align-items: center;
     }
 
@@ -456,7 +456,77 @@ section {
     }
 
     .skills-cards {
-        grid-template-columns: repeat(1, 1fr); /* Single column on smaller screens */
+        grid-template-columns: repeat(1, 1fr); /* Single column for skill cards */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Add spacing between links */
+        align-items: center; /* Center-align links */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Reduce font size */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    .hero .btn {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 10px 15px; /* Adjust button padding */
+    }
+
+    .about-container {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center-align items */
+        text-align: center; /* Center-align text */
+    }
+
+    .about-content {
+        margin-bottom: 20px; /* Add spacing below content */
+    }
+
+    .about-image img {
+        width: 200px; /* Reduce image size */
+        height: 200px;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(1, 1fr); /* Single column for project cards */
+        gap: 20px; /* Reduce spacing between cards */
+    }
+
+    .project-card img {
+        height: 150px; /* Reduce image height */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Add spacing between sections */
+    }
+
+    .contact-info {
+        text-align: center; /* Center-align text */
+    }
+
+    .contact-form {
+        width: 100%; /* Full width for the form */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer content vertically */
+        gap: 15px; /* Add spacing between sections */
+    }
+
+    .social-links {
+        justify-content: center; /* Center-align social icons */
+    }
+
+    .footer-links {
+        justify-content: center; /* Center-align footer links */
+        gap: 10px; /* Reduce spacing between links */
     }
 }
 
@@ -633,6 +703,20 @@ section {
 
     .footer-links {
         justify-content: center;
+        gap: 10px; /* Reduce spacing between links */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer content vertically */
+        gap: 15px; /* Add spacing between sections */
+    }
+
+    .social-links {
+        justify-content: center; /* Center-align social icons */
+    }
+
+    .footer-links {
+        justify-content: center; /* Center-align footer links */
         gap: 10px; /* Reduce spacing between links */
     }
 }
