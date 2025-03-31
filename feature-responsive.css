@@ -6,21 +6,39 @@ body {
 
 /* Header */
 .header {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .navbar {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .navbar a {
-    padding: 10px;
-    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 /* Hero Section */
@@ -124,5 +142,32 @@ body {
     .skills-container {
         flex-direction: row;
         justify-content: space-between;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        padding: 10px;
+        text-align: right;
     }
 }
