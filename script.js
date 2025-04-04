@@ -1,63 +1,128 @@
-// JavaScript for Tab Functionality
-const tabs = document.querySelectorAll('.tab');
-const skillCards = document.querySelectorAll('.skill-card');
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove active class from all tabs
-        tabs.forEach(t => t.classList.remove('active'));
-        // Add active class to the clicked tab
-        tab.classList.add('active');
+        // Check for saved user preference
+        if (localStorage.getItem('theme') === 'dark-mode') {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
 
-        // Get the category of the clicked tab
-        const category = tab.getAttribute('data-category');
-
-        // Show only the skill cards that match the category
-        skillCards.forEach(card => {
-            if (card.getAttribute('data-category') === category || category === 'all') {
-                card.classList.add('active');
+        // Toggle dark mode
+        darkModeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
             } else {
-                card.classList.remove('active');
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', '');
             }
         });
-    });
-});
 
-// Set default active tab and cards
-document.querySelector('.tab.active').click();
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-function createCircularChart(canvasId, percentage) {
-    const ctx = document.getElementById(canvasId).getContext('2d');
-    new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            datasets: [{
-                data: [percentage, 100 - percentage],
-                backgroundColor: ['#f9a825', '#333'], // Primary and background colors
-                borderWidth: 0
-            }]
-        },
-        options: {
-            cutout: '80%', // Creates the circular "donut" effect
-            responsive: true,
-            plugins: {
-                legend: { display: false }, // Hides the legend
-                tooltip: { enabled: false } // Disables tooltips
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
             }
-        }
-    });
-}
+        });
 
-// Create charts for each skill
-createCircularChart('htmlChart', 95);
-createCircularChart('cssChart', 90);
-createCircularChart('jsChart', 85);
-createCircularChart('reactChart', 80);
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
-// JavaScript for Navbar Toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navbar = document.querySelector('.navbar');
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For this example, we'll just log it and show an alert
+            console.log({ name, email, subject, message });
+            
+            alert('Thank you for your message, ' + name + '! I will get back to you soon.');
+            contactForm.reset();
+        });
 
-navToggle.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-});
+        // Resume Download
+        document.getElementById('download-resume').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Downloading resume...');
+            // In a real implementation, this would trigger a file download
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const fadeInOnScroll = function() {
+            for (let i = 0; i < fadeElements.length; i++) {
+                const element = fadeElements[i];
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            }
+        };
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Check animations on load and scroll
+        window.addEventListener('load', fadeInOnScroll);
+        window.addEventListener('scroll', fadeInOnScroll);
