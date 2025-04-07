@@ -274,6 +274,9 @@ input:checked + .slider:before {
     justify-content: space-between;
     gap: 40px;
     padding: 40px 0;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero-text {
@@ -907,16 +910,20 @@ footer {
     .hero-content {
         flex-direction: column;
         text-align: center;
-        padding: 20px 0;
+        padding: 20px;
+        width: 100%;
     }
     
     .hero-text {
         order: 1;
+        padding-right: 0;
+        width: 100%;
     }
     
     .hero-image {
         order: 2;
         margin-top: 20px;
+        width: 100%;
     }
     
     .hero-btns {
@@ -986,7 +993,7 @@ footer {
     }
     
     .hero-content {
-        padding: 10px 0;
+        padding: 10px;
     }
 }
 
