@@ -90,13 +90,101 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Here you would typically send the form data to a server
-            // For this example, we'll just log it and show an alert
-            console.log({ name, email, subject, message });
+            // Create form data object
+            const formData = {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            };
             
-            alert('Thank you for your message, ' + name + '! I will get back to you soon.');
-            contactForm.reset();
+            // Send data to Formspree
+            fetch('https://formspree.io/f/mkgjqqbl', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    showSuccessMessage(name);
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    // Show error message
+                    showErrorMessage();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showErrorMessage();
+            });
         });
+        
+        // Function to show success message
+        function showSuccessMessage(name) {
+            // Create success message element
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.innerHTML = `
+                <div class="success-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Thank you, ${name}!</h3>
+                    <p>Your message has been sent successfully. I'll get back to you soon.</p>
+                    <button class="btn close-message">Close</button>
+                </div>
+            `;
+            
+            // Add to body
+            document.body.appendChild(successMessage);
+            
+            // Add active class after a small delay for animation
+            setTimeout(() => {
+                successMessage.classList.add('active');
+            }, 10);
+            
+            // Add event listener to close button
+            successMessage.querySelector('.close-message').addEventListener('click', () => {
+                successMessage.classList.remove('active');
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 300);
+            });
+        }
+        
+        // Function to show error message
+        function showErrorMessage() {
+            // Create error message element
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'error-message';
+            errorMessage.innerHTML = `
+                <div class="error-content">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Oops! Something went wrong</h3>
+                    <p>There was a problem sending your message. Please try again later.</p>
+                    <button class="btn close-message">Close</button>
+                </div>
+            `;
+            
+            // Add to body
+            document.body.appendChild(errorMessage);
+            
+            // Add active class after a small delay for animation
+            setTimeout(() => {
+                errorMessage.classList.add('active');
+            }, 10);
+            
+            // Add event listener to close button
+            errorMessage.querySelector('.close-message').addEventListener('click', () => {
+                errorMessage.classList.remove('active');
+                setTimeout(() => {
+                    errorMessage.remove();
+                }, 300);
+            });
+        }
 
         // Resume Download
         document.getElementById('download-resume').addEventListener('click', function(e) {
